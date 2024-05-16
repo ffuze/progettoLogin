@@ -1,3 +1,12 @@
+
+<?php
+
+$recuperoPassword = "SELECT * FROM utente WHERE email = '$mail'";
+$result = mysqli_query($conn, $recuperoPassword);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +29,7 @@
 
 $pwassword=$_["mail"];
 
-
-$recuperoPassword = "SELECT * FROM utente WHERE email = '$mail'";
+$recuperoPassword = "UPDATE  FROM utente WHERE email = '$mail'";
 $result = mysqli_query($conn, $recuperoPassword);
 
 

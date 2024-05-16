@@ -14,6 +14,7 @@
 
 <p>inserisci la tua mail:</p>
 <input type="text" name="mail">
+
 <input type="submit"> 
 
 
@@ -22,6 +23,16 @@
 </form>
 
 
+<?php
 
+
+
+$recuperoPassword = "SELECT * FROM utente WHERE email = '$mail'";
+$result = mysqli_query($conn, $recuperoPassword);
+
+
+
+
+?>
 
 </body>
