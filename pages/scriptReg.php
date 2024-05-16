@@ -14,14 +14,14 @@ $biografia = $_POST["biografia"];
 
 $datiUtente = "SELECT * FROM utente WHERE EMAIL = '$email' AND NAME = '$nome' AND SURNAME = '$cognome'";
 $result = mysqli_query($conn, $datiUtente);
-    
-if(isset($username) && isset($password) && isset($id) && isset($nome) && isset($cognome) && isset($email) && isset($data)){
+
+if(isset($email) && isset($password) && isset($nome) && isset($cognome) && isset($classe) && isset($eta) && isset($biografia)){
     $query = "INSERT INTO utente (email, password, name, surname, class, age, biography)
     VALUES ('$email', '$password', '$nome', '$cognome', '$classe', '$eta', '$biografia')";
 
     $result = mysqli_query($conn, $query);
     if($result) {
-        header("Location: ../paginaLogin.php");
+        header("Location: ../index.php");
         echo "<p class=\"text-success\">Utente registrato con successo</p>";
     }
     else {

@@ -27,10 +27,10 @@ if(isset($_SESSION['errore_reg'])){
                 <input type="text" id="classe" name="classe" placeholder="Classe"><br>
             </div>
             <div class="input-box">
-                <input type="text" id="eta" name="eta" placeholder="Età"><br>
+                <input type="number" id="eta" name="eta" placeholder="Età"><br>
             </div>
             <div class="input-box">
-                <input type="password" id="biografia" name="biografia" placeholder="Biografia"><br><br>
+                <input type="text" id="biografia" name="biografia" placeholder="Biografia"><br><br>
             </div>
             <div class="input-box">
                 <input type="text" id="email" name="email" placeholder="E-mail"><br>

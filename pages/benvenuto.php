@@ -12,7 +12,7 @@
 
 session_start();
 
-echo "<h1>Ciao . " . $_SESSION["username"] . ", sei nella PAGINA DI BENVENUTO lolxd</h1>";
+echo "<h1>Ciao . " . $_SESSION["username"] . ", sei nella PAGINA DI BENVENUTO!!!!!!!!!!!!!!</h1>";
 
 
 ?>

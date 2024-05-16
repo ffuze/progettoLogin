@@ -1,9 +1,14 @@
 
-<?php
+<!--<?php
+
+$pwassword=$_["mail"];
 
 $recuperoPassword = "SELECT * FROM utente WHERE email = '$mail'";
 $result = mysqli_query($conn, $recuperoPassword);
 
+if($result){
+    header("Location: pages/errorePassword.php");
+}
 
 ?>
 
@@ -27,9 +32,8 @@ $result = mysqli_query($conn, $recuperoPassword);
     </div>  
 <?php
 
-$pwassword=$_["mail"];
 
-$recuperoPassword = "UPDATE  FROM utente WHERE email = '$mail'";
+$recuperoPassword = "UPDATE utente SET password =  WHERE `studenti`.`Matricola` = 13;";
 $result = mysqli_query($conn, $recuperoPassword);
 
 

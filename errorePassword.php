@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,15 +12,12 @@
 
 utente non esistente mail errata:
 <br><br>
-<a href="pages/passwordDimenticata"><button value="torna indietro"></button></a>
+<a href="pages/passwordDimenticata"><button value="torna indietro"></button></a>-->
 
 <?php
 
 
 
-
-$recuperoPassword = "SELECT * FROM utente WHERE email = '$mail'";
-$result = mysqli_query($conn, $recuperoPassword);
 
 
 

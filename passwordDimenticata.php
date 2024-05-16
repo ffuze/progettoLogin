@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,16 +23,8 @@
 </form>
 
 
-<?php
 
 
 
-$recuperoPassword = "SELECT * FROM utente WHERE email = '$mail'";
-$result = mysqli_query($conn, $recuperoPassword);
-
-
-
-
-?>
 
 </body>

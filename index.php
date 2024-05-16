@@ -22,11 +22,11 @@ session_start();
                 <i class='bx bxs-lock-alt'></i>    
                 <input type="password" id="password" name="password" placeholder="Password" required><br>
             </div>
-            <div class="ricordami-psw">
+           <!-- <div class="ricordami-psw">
                 <label><input type="checkbox">Ricordami</label>
                 
                 <a href="passwordDimenticata.php">Password dimenticata?</a>
-            </div>
+            </div> -->
             <br>
             <input type="submit" class="btn" value="Login">
             <div class="no-account">
