@@ -1,5 +1,19 @@
 <?php
-session_start();
+    session_start();
+    if(isset($_SESSION['errore_login'])){
+        echo "<div class='error-wrapper'>";
+        echo "<i class='bx bx-error'><br><br></i>";
+        echo "<p>" . $_SESSION['errore_login'] . "</p>";
+        echo "</div>";
+        unset($_SESSION['errore_login']);
+    }
+    if(isset($_SESSION['reg_success'])){
+        echo "<div class='reg-success-wrapper'>";
+        echo "<i class='bx bxs-party'><br><br></i>";
+        echo "<p>" . $_SESSION['reg_success'] . "</p>";
+        echo "</div>";
+        unset($_SESSION['reg_success']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,15 +48,5 @@ session_start();
             </div>
         </form>
     </div>
-
-    <?php
-    if(isset($_SESSION['errore_login'])){
-        echo "<div class='error-wrapper'>";
-        echo "<i class='bx bx-error'><br><br></i>";
-        echo "<p>" . $_SESSION['errore_login'] . "</p>";
-        echo "</div>";
-        unset($_SESSION['errore_login']);
-    }
-    ?>
 </body>
 </html>

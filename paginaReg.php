@@ -1,14 +1,10 @@
 <?php
 session_start();
 if(isset($_SESSION['errore_reg'])){
-    echo "<p class='error-wrapper'>" . $_SESSION['errore_registrazione'] . "</p>";
-    unset($_SESSION['errore_reg']);
-}
-if(isset($_SESSION['reg_success'])){
     echo "<div class='error-wrapper'>";
-    echo "<i class='bx bxs-party'><br><br></i>";
-    echo "<p>" . $_SESSION['reg_success'] . "</p>";
+    echo "<p>" . $_SESSION['errore_reg'] . "</p>";
     echo "</div>";
+    unset($_SESSION['errore_reg']);
 }
 ?>
 <!DOCTYPE html>
