@@ -16,7 +16,7 @@ session_start();
             <h2>Login</h2>
             <div class="input-box">
                 <i class='bx bxs-user'></i>
-                <input type="text" id="username" name="username" placeholder="Username" required><br>
+                <input type="text" id="email" name="email" placeholder="E-mail" required><br>
             </div>
             <div class="input-box">
                 <i class='bx bxs-lock-alt'></i>    
@@ -37,7 +37,10 @@ session_start();
 
     <?php
     if(isset($_SESSION['errore_login'])){
-        echo "<p style='color:red;'>" . $_SESSION['errore_login'] . "</p>";
+        echo "<div class='error-wrapper'>";
+        echo "<i class='bx bx-error'><br><br></i>";
+        echo "<p>" . $_SESSION['errore_login'] . "</p>";
+        echo "</div>";
         unset($_SESSION['errore_login']);
     }
     ?>

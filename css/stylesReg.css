@@ -100,3 +100,19 @@ input[type="datetime-local"] {
     color: #fff;
     padding: 20px 15px 20px 20px;
 }
+
+.error-wrapper {
+    width: 420px;
+    background: rgba(255, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 0, 0, 0.5); 
+}
+
+.error-wrapper i {
+    font-size: 34px;
+    margin-right: 10px;
+}

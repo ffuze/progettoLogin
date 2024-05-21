@@ -3,16 +3,16 @@ session_start();
 
 include "connessione.php";
 
-$username = $_POST['username'];
+$username = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM utente WHERE USERNAME = '$username'";
+$sql = "SELECT * FROM utente WHERE email = '$username'";
 $result = $conn->query($sql);
 
-if($result->num_rows > 0){
+if($result->num_rows = 0){
     $row = $result->fetch_assoc();
-    if ($row['password'] == hash("sha256", $password)) {
-        header("Location: benvenuto.php");
+    if ($row['password'] == $password) {
+        header("Location: ../benvenuto.php");
     }
     else {  
         $_SESSION["errore_login"] = "Password errata";

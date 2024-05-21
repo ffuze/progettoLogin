@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost:3006";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "mercatinodb";
