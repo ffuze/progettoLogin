@@ -1,4 +1,4 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,24 +7,13 @@
     <link rel="stylesheet" href="./css/stylesLogin.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
+<?php
+session_start();
+include("connessione.php");
 
-<form action="pages/pwassword.php" method="post">
-<div class="wrapper">
-
-<p>inserisci la tua mail:</p>
-<input type="text" name="mail">
-
-<input type="submit"> 
-
-
-
-</div>
-</form>
-
-
-
-
-
-
-</body>
+echo "PORCODIOOOOOOOOOOOOOO";
+var_dump($_SESSION["id_oggetto"]);
+?>
+</body>  

@@ -8,11 +8,12 @@ $password = $_POST['password'];
 
 $sql = "SELECT * FROM utente WHERE email = '$email'";
 $result = $conn->query($sql);
+$passwordH = hash("sha256", $password);
 
 if($result){
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        if(password_verify($password, $row['password'])){
+        if($passwordH == $row['PASSWORD']){
             header("Location: ./benvenuto.php");
             exit();
         }

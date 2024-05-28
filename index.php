@@ -14,6 +14,13 @@
         echo "</div>";
         unset($_SESSION['reg_success']);
     }
+    if(isset($_SESSION['errore_regdati'])){
+        echo "<div class='error-wrapper'>";
+        echo "<i class='bx bx-error'><br><br></i>";
+        echo "<p>" . $_SESSION['errore_regdati'] . "</p>";
+        echo "</div>";
+        unset($_SESSION['errore_regdati']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
