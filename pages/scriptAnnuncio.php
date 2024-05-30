@@ -8,19 +8,18 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <form action="scriptAnnuncio.php" method="post">
-        quanto vuoi pagare sta merda:
-    <input type="number" name="prezzo" value="0">
-    <input type="submit">
-    </form>
-
-    <input type="submit" value="back" name="back" onclick="header(location: ./oggetti.php)">
-
 <?php
+
 session_start();
 include("connessione.php");
+if($_SESSION["gesu"] == null){
+    echo "errore";
+    var_dump($_SESSION["gesu"]);
+}else{
+    echo "waaaaaaa";
+    var_dump($_SESSION["gesu"]);
 
-echo $_SESSION["g"];
+} 
 
 ?>
 </body>  

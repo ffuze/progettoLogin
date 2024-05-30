@@ -7,6 +7,6 @@ $dbname = "mercatinodb";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
-    header("Location: errore_loginReg.php");
+    header("Location: erroreConn.php");
 }
 ?>

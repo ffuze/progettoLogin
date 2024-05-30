@@ -19,10 +19,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cognome = trim($_POST["cognome"]);
     $classe = trim($_POST["classe"]);
     $eta = trim($_POST["eta"]);
-    $biografia="";
+    $confirmPassword = trim($_POST["confirmPassword"]);
+    $biografia = "";
 
     if(empty($email) || empty($password) || empty($nome) || empty($cognome) || empty($classe) || empty($eta)){
         $_SESSION["errore_reg"] = "Inserisci tutti i dati per poterti registrare";
+        header("Location: ../paginaReg.php");
+        exit();
+    }
+
+    if($password !== $confirmPassword){
+        $_SESSION["errore_reg"] = "Le password non corrispondono";
+        header("Location: ../paginaReg.php");
+        exit();
+    }
+
+    $allowed_domains = array("@gmail.com", "@yahoo.it", "@itismeucci.com", "@virgilio.it", "@libero.it");
+
+    $valid_email = false;
+    foreach($allowed_domains as $domain){
+        if(substr($email, -strlen($domain)) === $domain){
+            $valid_email = true;
+            break;
+        }
+    }
+
+    if(!$valid_email){
+        $_SESSION["errore_reg"] = "L'email inserita non è valida";
         header("Location: ../paginaReg.php");
         exit();
     }

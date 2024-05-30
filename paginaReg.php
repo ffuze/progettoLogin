@@ -96,7 +96,11 @@ if(isset($_SESSION['errore_reg'])){
                 <input type="text" id="email" name="email" placeholder="E-mail"><br>
             </div>
             <div class="input-box">
+                <i class='bx bxs-hide' id="togglePassword"></i>
                 <input type="password" id="password" name="password" placeholder="Password"><br>
+            </div>
+            <div class="input-box">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Conferma password" required><br>
             </div>
             <input type="submit" class="btn" value="Registrati">
             <div class="sbagliato">
@@ -104,6 +108,5 @@ if(isset($_SESSION['errore_reg'])){
             </div>
         </form>
     </div>
-    
 </body>
 </html>

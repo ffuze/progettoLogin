@@ -30,6 +30,23 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css/stylesLogin.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            var passwordIcon = document.getElementById('togglePassword');
+
+            if(passwordInput.type === 'password'){
+                passwordInput.type = 'text';
+                passwordIcon.classList.remove('bxs-hide');
+                passwordIcon.classList.add('bx-show');
+            }
+            else{
+                passwordInput.type = 'password';
+                passwordIcon.classList.remove('bx-show');
+                passwordIcon.classList.add('bxs-hide');
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -40,7 +57,7 @@
                 <input type="text" id="email" name="email" placeholder="E-mail" required><br>
             </div>
             <div class="input-box">
-                <i class='bx bxs-lock-alt'></i>    
+                <i class='bx bxs-hide' id="togglePassword"></i>
                 <input type="password" id="password" name="password" placeholder="Password" required><br>
             </div>
             <br>
@@ -50,5 +67,8 @@
             </div>
         </form>
     </div>
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', togglePasswordVisibility);
+    </script>
 </body>
 </html>
