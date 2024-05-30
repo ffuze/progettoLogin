@@ -27,7 +27,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>llllllllogin</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./css/stylesLogin.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -43,11 +43,6 @@
                 <i class='bx bxs-lock-alt'></i>    
                 <input type="password" id="password" name="password" placeholder="Password" required><br>
             </div>
-           <!-- <div class="ricordami-psw">
-                <label><input type="checkbox">Ricordami</label>
-                
-                <a href="passwordDimenticata.php">Password dimenticata?</a>
-            </div> -->
             <br>
             <input type="submit" class="btn" value="Login">
             <div class="no-account">

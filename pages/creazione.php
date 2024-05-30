@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +16,9 @@ include "connessione.php";
 $nome=$_POST["name"];
 $descrizione=$_POST["desc"];
 $categoria=$_POST["cat"];
-
 $sqli = "SELECT ID FROM categoria where NAME='$categoria'";
 $result = $conn->query($sqli);
+
 if($result ->num_rows > 0) {
   $row = $result -> fetch_assoc();
   $s = $row["ID"];

@@ -14,6 +14,6 @@ session_start();
 include("connessione.php");
 
 echo "PORCODIOOOOOOOOOOOOOO";
-var_dump($_SESSION["id_oggetto"]);
+var_dump($_SESSION["gesu"]);
 ?>
 </body>  

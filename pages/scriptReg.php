@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cognome = trim($_POST["cognome"]);
     $classe = trim($_POST["classe"]);
     $eta = trim($_POST["eta"]);
+    $biografia="";
 
     if(empty($email) || empty($password) || empty($nome) || empty($cognome) || empty($classe) || empty($eta)){
         $_SESSION["errore_reg"] = "Inserisci tutti i dati per poterti registrare";
