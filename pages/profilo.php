@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
+    <title>Profilo</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        #divmain {
-            background: rgba(232, 146, 85, 0.747);
-            border-radius: 3;
-            border-color: 
-        }
-
-        #divnotmain{
-            background: rgba(232, 146, 85, 0.747);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/stylesProfilo.css">
 </head>
 <body>
     <?php
@@ -37,6 +27,38 @@
         $stmt->fetch();
         $stmt->close();
     ?>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="https://www.itismeucci.edu.it/" target="_blank"><img src="../images/meuccilogo.png" width="4%"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="benvenuto.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aggiungi_oggetto.php">Aggiungi oggetto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="oggetti.php">Visualizza Oggetti</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profilo
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="confermaLogout()">Logout</a></li>
+                            <div id="spinner" style="display: none;">Logout in corso...</div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container mt-5" id="divmain">
         <h2 class="mb-4">Dati Inseriti</h2>
         <div class="card" id="divnotmain">
@@ -51,7 +73,8 @@
                 if (!($biografia == "")) {
                     echo "<p class='card-text'><strong>Biografia: </strong>" . $biografia . "</p>";
                 } ?>
-                <a href="benvenuto.php" class="btn btn-primary">Torna al modulo</a>
+                <a href="benvenuto.php" class="btn btn-primary">Torna alla home</a>
+                <a href="cambiaprofilo.php" class="btn btn-primary">Modifica Dettagli Profilo</a>
             </div>
         </div>
     </div>
