@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +23,7 @@ session_start();
                         <a class="nav-link active" aria-current="page" href="benvenuto.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aggiungiOggetto.php">Aggiungi Oggetto</a>
+                        <a class="nav-link" href="aggiungi_oggetto.php">Aggiungi Oggetto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="oggetti.php">Visualizza Oggetti</a>
@@ -45,6 +42,16 @@ session_start();
             </div>
         </div>
     </nav>
+    <?php
+    session_start();
+    if(isset($_SESSION["ogg_success"])){
+        echo "<div class='reg-success-wrapper'>";
+        echo "<i class='bx bxs-party'><br><br></i>";
+        echo "<p>" . $_SESSION['ogg_success'] . "</p>";
+        echo "</div>";
+        unset($_SESSION['ogg_success']);
+    }
+    ?>
     <div class="container mt-5">
         <div class="welcome-box">
             <h1>Ciao, <?php echo $_SESSION["utente"]; ?>!</h1>
@@ -70,6 +77,14 @@ session_start();
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="option-box" onclick="location.href='aggiungi_annuncio.php';">
+                    <i class='bx bxs-envelope'></i>
+                    <h2>Aggiungi annuncio</h2>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
     function confermaLogout() {
@@ -78,7 +93,7 @@ session_start();
             document.getElementById('spinner').style.display = 'block';
             setTimeout(function() {
                 window.location.href = "../index.php";
-            }, 2000);
+            }, 1200);
         } 
         else {
         }

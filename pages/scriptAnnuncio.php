@@ -9,17 +9,34 @@
 </head>
 <body>
 <?php
-
 session_start();
 include("connessione.php");
-if($_SESSION["gesu"] == null){
-    echo "errore";
-    var_dump($_SESSION["gesu"]);
-}else{
-    echo "waaaaaaa";
-    var_dump($_SESSION["gesu"]);
 
-} 
+$cash = $_POST["prezzo"];
+$definizione =$_POST["def"];
+$status = "pending";
+$m = $_SESSION["email"];
+$g = $_SESSION["gesu"];
+
+$sqli ="SELECT * FROM utente JOIN oggetto ON oggetto.USER_EMAIL=utente.EMAIL 
+WHERE  oggetto.ID = $g AND oggetto.USER_EMAIL = $m";
+
+if($conn->query($sqli) !== TRUE){
+
+    $sql = "INSERT INTO proposta (PRICE, STATUS, DESCRIPTION, USER_EMAIL, OBJECT_ID)
+    VALUES ($cash '$descrizione', $m, '$g')";
+
+    if ($conn->query($sql) === TRUE) {  
+        echo "oggetto inserito";
+        header("location: ./benvenuto.php");
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+        header("location: ./oggetti.php");
+    }
+}else{
+    header("location: ./oggetti.php");
+}
+$conn->close();
 
 ?>
 </body>  

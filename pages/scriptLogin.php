@@ -13,6 +13,8 @@ $passwordH = hash("sha256", $password);
 if($result){
     if($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        $_SESSION["utente"] = $row['NAME'] . " " . $row['SURNAME'];
+        $_SESSION["mail"] = $email;
         if($passwordH == $row['PASSWORD']){
             header("Location: ./benvenuto.php");
             exit();

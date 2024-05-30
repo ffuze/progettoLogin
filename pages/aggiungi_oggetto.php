@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +73,15 @@
             <input type="submit" class="btn" value="Submit">
         </form>
     </div>
+    <?php
+        if(isset($_SESSION["ogg_fail"])){
+            echo "<div class='error-wrapper'>";
+            echo "<i class='bx bx-error'><br><br></i>";
+            echo "<p>" . $_SESSION['ogg_fail'] . "</p>";
+            echo "</div>";
+            unset($_SESSION['ogg_fail']);
+        }
+    ?>
     <script>
     function showSpinner() {
         document.getElementById('overlay').style.display = 'block';

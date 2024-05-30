@@ -9,18 +9,21 @@
 </head>
 <body>
     <form action="scriptAnnuncio.php" method="post">
-        quanto vuoi pagare sta merda:
-    <input type="number" name="prezzo" value="0">
+        quanto vuoi pagare:
+    <input type="number" name="prezzo" value="0"><br>
+        descrizione:
+    <input type="text" name="def" value="descrizione"><br>
     <input type="submit">
     </form>
-
-    <input type="submit" value="back" name="back" onclick="header(location: ./oggetti.php)">
 
 <?php
 session_start();
 include("connessione.php");
-
-echo $_SESSION["g"];
+$idOggetto = 0;
+$idOggetto = $_POST["no"];
+$_SESSION["gesu"]= $idOggetto;
+echo $_SESSION["gesu"];
 
 ?>
+
 </body>  
