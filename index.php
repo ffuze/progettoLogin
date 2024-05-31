@@ -1,26 +1,5 @@
 <?php
-    session_start();
-    if(isset($_SESSION['errore_login'])){
-        echo "<div class='error-wrapper'>";
-        echo "<i class='bx bx-error'><br><br></i>";
-        echo "<p>" . $_SESSION['errore_login'] . "</p>";
-        echo "</div>";
-        unset($_SESSION['errore_login']);
-    }
-    if(isset($_SESSION['reg_success'])){
-        echo "<div class='reg-success-wrapper'>";
-        echo "<i class='bx bxs-party'><br><br></i>";
-        echo "<p>" . $_SESSION['reg_success'] . "</p>";
-        echo "</div>";
-        unset($_SESSION['reg_success']);
-    }
-    if(isset($_SESSION['errore_regdati'])){
-        echo "<div class='error-wrapper'>";
-        echo "<i class='bx bx-error'><br><br></i>";
-        echo "<p>" . $_SESSION['errore_regdati'] . "</p>";
-        echo "</div>";
-        unset($_SESSION['errore_regdati']);
-    }
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +45,31 @@
                 <p>Non hai un account? <a href="./paginaReg.php">Registrati</a></p>
             </div>
         </form>
+    </div>
+    <div>
+    <?php
+        if(isset($_SESSION['errore_login'])){
+            echo "<div class='error-wrapper'>";
+            echo "<i class='bx bx-error'><br><br></i>";
+            echo "<p>" . $_SESSION['errore_login'] . "</p>";
+            echo "</div>";
+            unset($_SESSION['errore_login']);
+        }
+        if(isset($_SESSION['reg_success'])){
+            echo "<div class='reg-success-wrapper'>";
+            echo "<i class='bx bxs-party'><br><br></i>";
+            echo "<p>" . $_SESSION['reg_success'] . "</p>";
+            echo "</div>";
+            unset($_SESSION['reg_success']);
+        }
+        if(isset($_SESSION['errore_regdati'])){
+            echo "<div class='error-wrapper'>";
+            echo "<i class='bx bx-error'><br><br></i>";
+            echo "<p>" . $_SESSION['errore_regdati'] . "</p>";
+            echo "</div>";
+            unset($_SESSION['errore_regdati']);
+        }
+    ?>
     </div>
     <script>
         document.getElementById('togglePassword').addEventListener('click', togglePasswordVisibility);

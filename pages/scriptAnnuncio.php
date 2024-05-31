@@ -15,26 +15,28 @@ include("connessione.php");
 $cash = $_POST["prezzo"];
 $definizione =$_POST["def"];
 $status = "pending";
-$m = $_SESSION["email"];
+$m = $_SESSION["mail"];     
 $g = $_SESSION["gesu"];
 
-$sqli ="SELECT * FROM utente JOIN oggetto ON oggetto.USER_EMAIL=utente.EMAIL 
-WHERE  oggetto.ID = $g AND oggetto.USER_EMAIL = $m";
+$sqli ="SELECT * FROM utente 
+        JOIN oggetto ON oggetto.USER_EMAIL=utente.EMAIL 
+        WHERE oggetto.ID = $g AND oggetto.USER_EMAIL = '$m'";
+$result = $conn->query($sqli);
 
-if($conn->query($sqli) !== TRUE){
-
+if($result === NULL){
+    header("location: ./oggetti.php");
+}else{
     $sql = "INSERT INTO proposta (PRICE, STATUS, DESCRIPTION, USER_EMAIL, OBJECT_ID)
-    VALUES ($cash '$descrizione', $m, '$g')";
+    VALUES ($cash, '$status', '$descrizione', '$m', '$g')";
 
     if ($conn->query($sql) === TRUE) {  
         echo "oggetto inserito";
-        header("location: ./benvenuto.php");
+        header("Location: ./oggetti.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
         header("location: ./oggetti.php");
     }
-}else{
-    header("location: ./oggetti.php");
+    
 }
 $conn->close();
 

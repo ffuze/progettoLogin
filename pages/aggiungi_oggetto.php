@@ -12,21 +12,21 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top d-">
         <div class="container-fluid">
+        <a class="navbar-brand d-flex" href="#"><img class="d-flex" src="../images/meuccilogo.png" width="30px"></a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="navbar-brand" href="https://www.itismeucci.edu.it/" target="_blank"><img src="../images/meuccilogo.png" width="4%"></a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="benvenuto.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aggiungiOggetto.php">Aggiungi Oggetto</a>
+                        <a class="nav-link" href="aggiungi_oggetto.php">Aggiungi oggetto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="oggetti.php">Visualizza Oggetti</a>
@@ -36,7 +36,6 @@ session_start();
                             Profilo
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="profilo.php">Visualizza Informazioni</a></li>
                             <li><a class="dropdown-item" onclick="confermaLogout()">Logout</a></li>
                             <div id="spinner" style="display: none;">Logout in corso...</div>
                         </ul>

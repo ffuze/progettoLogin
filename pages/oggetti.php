@@ -24,8 +24,14 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 
     echo "<form action='aggiungi_annuncio.php' method='post'>";
-    echo "ID: -->" . $row["ID"]. "<-- , NOME: " . $row["NAME"]. ", DESCRIZIONE: " . $row["DESCRIPTION"]. 
-    ", CATEGORIA: " . $row["CATEGORY_ID"]. ", EMAIL: " . $row["USER_EMAIL"]."  ";
+    echo"<input readonly='text' name='id' value=". $row['ID'].">";
+    echo"<input readonly='text' name='nome' value=". $row['NAME'].">";
+
+    echo"<input readonly='text' name='scrizione' value=". $row['DESCRIPTION'].">";
+
+    echo"<input readonly='text' name='categoria' value=". $row['CATEGORY_ID'].">";
+    echo"<input readonly='text' name='email' value=". $row['USER_EMAIL'].">";
+
     echo '<input type="submit" name="submit" value="w.i.p.">';
    
     if(isset($_POST['Submit'])){
@@ -52,7 +58,11 @@ $conn->close();
 ?>
 
 
+<form action="">
 
+<input type="text" value="">
+
+</form>
 
 
 </body>
